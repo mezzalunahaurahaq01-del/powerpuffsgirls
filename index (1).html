@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quattro Group's Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600;6..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Navigasi utama">
+    <a href="#home" data-v="home" class="on">Home</a>
+    <a href="#design" data-v="design">Design</a>
+    <a href="#product" data-v="product">Product</a>
+  </nav>
+</header>
+
+<main>
+  <section class="view on" id="home">
+    <div class="logo" role="img" aria-label="Logo Quattro Group: semanggi daun empat">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#5e8f72" stroke="#0d1a12" stroke-width="2.2" stroke-linejoin="round">
+          <path d="M100 100C78 86 70 62 78 44C86 28 112 26 124 38C134 50 128 80 100 100Z"/>
+          <path d="M100 100C114 78 138 70 156 78C172 86 174 112 162 124C150 134 120 128 100 100Z"/>
+          <path d="M100 100C122 114 130 138 122 156C114 172 88 174 76 162C66 150 72 120 100 100Z"/>
+          <path d="M100 100C86 122 62 130 44 122C28 114 26 88 38 76C50 66 80 72 100 100Z"/>
+        </g>
+        <g stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none">
+          <path d="M100 42V158M42 100H158M88 42Q100 40 112 42M88 158Q100 160 112 158M42 88Q40 100 42 112M158 88Q160 100 158 112"/>
+        </g>
+        <g stroke="#fff" stroke-width="1.4" fill="none">
+          <path d="M92 92L100 100L92 100M108 92L100 100L108 100M92 108L100 100L92 100M108 108L100 100L108 100"/>
+        </g>
+      </svg>
+    </div>
+    <h1>Welcome to Quattro Group's Project</h1>
+    <p class="tagline">Empat anggota, satu panggung. Semangat kami: pendidikan yang berkualitas dan mudah dijangkau lewat teknologi.</p>
+  </section>
+
+  <section class="view" id="design">
+    <h2>Design</h2>
+    <p class="lead">Merah marun yang hangat, emas sebagai bingkai, dan huruf serif yang tegas. Ini bahan visual proyek kami.</p>
+    <ul class="swatches">
+      <li><div class="chip" style="background:#4a0d1a"></div><b>Marun</b><span>#4A0D1A</span></li>
+      <li><div class="chip" style="background:#c8203c"></div><b>Merah</b><span>#C8203C</span></li>
+      <li><div class="chip" style="background:#e9cf8d"></div><b>Emas</b><span>#E9CF8D</span></li>
+      <li><div class="chip" style="background:#f8ecd9"></div><b>Krem</b><span>#F8ECD9</span></li>
+      <li><div class="chip" style="background:#5e8f72"></div><b>Hijau daun</b><span>#5E8F72</span></li>
+    </ul>
+    <div class="type">
+      <div><span class="d">Aa</span><small>Bodoni Moda untuk judul</small></div>
+      <div><span class="b">Aa</span><small>Figtree untuk teks</small></div>
+    </div>
+  </section>
+
+  <section class="view" id="product">
+    <h2>Product</h2>
+    <p class="lead">Produk pertama kami sedang disiapkan oleh keempat anggota. Kami ingin belajar yang bagus bisa dijangkau siapa saja lewat teknologi.</p>
+    <span class="soon">Segera hadir</span>
+  </section>
+</main>
+
+<button class="fab" type="button" aria-label="Menu lainnya"><i></i><i></i><i></i></button>
+
+<footer>
+  <span>Version 1.0</span>
+  <span class="c">Quattro Group</span>
+  <span class="r">Powered by Claude</span>
+</footer>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('.nav a');
+  var views=document.querySelectorAll('.view');
+  function show(){
+    var id=(location.hash||'#home').slice(1);
+    if(!document.getElementById(id))id='home';
+    views.forEach(function(v){v.classList.toggle('on',v.id===id)});
+    links.forEach(function(a){
+      var on=a.dataset.v===id;
+      a.classList.toggle('on',on);
+      if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+    });
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show);
+  show();
+})();
+</script>
+</body>
+</html>
