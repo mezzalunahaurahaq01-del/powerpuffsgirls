@@ -1,1 +1,13 @@
-
+body{Background-color: pink;
+     border: 4px solid gray;
+     border-radius: 12px;
+    }
+h1 {text-align: center;
+   font-weight: bold;
+   color: purple;
+   }
+Ul {list-style-type: none;
+   }
+li {display: inline;
+    padding:4px;
+   }
